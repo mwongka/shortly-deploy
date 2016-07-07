@@ -1,0 +1,2 @@
+var db=require("../config"),Link=require("../models/link"),Links=new db.Collection;Links.model=Link,module.exports=Links;var db=require("../config"),User=require("../models/user"),Users=new db.Collection;Users.model=User,module.exports=Users;
+//# sourceMappingURL=uglify.js.map

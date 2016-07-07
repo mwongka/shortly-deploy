@@ -7,8 +7,8 @@ module.exports = function(grunt) {
         separator: ';'
       },
       dist: {
-        src: ['app/collections/*.js'],
-        dest: 'concat/js/concat.js' 
+        src: ['app/*.js'],
+        dest: 'public/dist/bundle.js' 
       }
     },
 
@@ -28,6 +28,14 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      options: {
+        sourceMap: true
+      },
+      build: {
+        files: {
+          'public/dist/bundle.js': ['public/dist/bundle.js'],
+        }
+      }
     },
 
     eslint: {
@@ -79,7 +87,8 @@ module.exports = function(grunt) {
   ////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
-  grunt.registerTask('build', [ 'concat' ]);
+  grunt.registerTask('cat', [ 'concat' ]);
+  grunt.registerTask('ugly', [ 'uglify' ]);
 
   grunt.registerTask('test', [
     'mochaTest'
