@@ -1,0 +1,7 @@
+
+// within SSH, link the bare repo to the actual folder where tree is pointing to
+// (this case it is shortly-deploy folder)
+git --work-tree=/root/shortly-deploy --git-dir=/var/repo/site.git checkout -f
+
+// when setting up the remote in the terminal (from your local desktop)
+git remote add live ssh://root@[IP ADDRESS GOES HERE]/var/repo/site.git
